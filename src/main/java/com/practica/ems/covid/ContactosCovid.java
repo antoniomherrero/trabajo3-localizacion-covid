@@ -99,8 +99,6 @@ public class ContactosCovid {
 	@SuppressWarnings("resource")
 	public void loadDataFile(String fichero, boolean reset, File archivo, FileReader fr, BufferedReader br, String datas[], String data ) {
 		try {
-			// Apertura del fichero y creacion de BufferedReader para poder
-			// hacer una lectura comoda (disponer del metodo readLine()).
 			archivo = new File(fichero);
 			fr = new FileReader(archivo);
 			br = new BufferedReader(fr);
@@ -123,8 +121,7 @@ public class ContactosCovid {
 							throw new EmsInvalidNumberOfDataException("El número de datos para PERSONA es menor de 8");
 						}
 						this.poblacion.addPersona(this.crearPersona(datos));
-					}
-					else if (datos[0].equals("LOCALIZACION")) {
+					} else if (datos[0].equals("LOCALIZACION")) {
 						if (datos.length != Constantes.MAX_DATOS_LOCALIZACION) {
 							throw new EmsInvalidNumberOfDataException(
 									"El numero de datos para LOCALIZACION es menor de 6" );
