@@ -255,14 +255,10 @@ public class ContactosCovid {
 		String fecha = null, hora;
 		float latitud = 0, longitud;
 				posicionPersona.setDocumento(data[1]);
-
 				fecha = data[2];
-		
 				hora = data[3];
 				posicionPersona.setFechaPosicion(FechaHora.parsearFecha(fecha, hora));
-		
 				latitud = Float.parseFloat(data[4]);
-			
 				longitud = Float.parseFloat(data[5]);
 				posicionPersona.setCoordenada(new Coordenada(latitud, longitud));
 		return posicionPersona;
