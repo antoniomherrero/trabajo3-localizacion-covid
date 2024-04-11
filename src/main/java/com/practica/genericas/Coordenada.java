@@ -45,16 +45,14 @@ public class Coordenada {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		else if (obj == null || getClass() != obj.getClass())
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
+
+
 		Coordenada other = (Coordenada) obj;
 		if (Float.floatToIntBits(latitud) != Float.floatToIntBits(other.latitud))
 			return false;
-		if (Float.floatToIntBits(longitud) != Float.floatToIntBits(other.longitud))
-			return false;
-		return true;
+		else return Float.floatToIntBits(longitud) == Float.floatToIntBits(other.longitud);
 	}
 	
 }
